@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>free.shourl.repl.co</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cloud-redwanul.web.app/2/redwanul.css">
+  <link rel="stylesheet" href="https://free.shourl.repl.co/strea/1.css">
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <script src="https://cloud-redwanul.web.app/3/hls.js"></script>
+  <script src="https://cloud-redwanul.web.app/2/redwanul.js"></script>
+  <script src="https://free.shourl.repl.co/strea/1.js"></script>
+  <div class="container">
+    <video controls crossorigin playsinline>
+      <source type="application/x-mpegURL" src=""></source>
+    </video>
+    <div class="watermark">MaxiTV m3u8 Player</div>
+  </div>
+  <!-- partial -->
+
+  <script>
+    // Extract the m3u8 URL from the query parameter in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const m3u8URL = urlParams.get('url');
+
+    // Set the m3u8 URL as the source of the video element
+    const videoSource = document.querySelector('video source');
+    videoSource.src = m3u8URL;
+
+    // Reload the video player after setting the source
+    const videoPlayer = document.querySelector('video');
+    videoPlayer.load();
+  </script>
+  <style>
+    .watermark {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+  </style>
+<!-- Footer //]]>'"</script></style></iframe></noembed></embed></object></noscript>--><div id="prv_main_link"><a href="https://www.prv.pl" title="darmowy hosting">Darmowy hosting</a> zapewnia PRV.PL</div><script type="text/javascript" src="/prv_site_config_values.js"></script><script type="text/javascript" src="//hosting2.keep.pl/prv_hosting_footer.js"></script></body>
+</html>
