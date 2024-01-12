@@ -1,0 +1,113 @@
+<style>
+    /* CSS styles */
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup iframe {
+      width: 80%;
+      height: 80%;
+      margin: 10% auto;
+      display: block;
+    }
+
+    .close {
+      color: #fff;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #ccc;
+    }
+  </style>
+
+
+  <div id="popup" class="popup">
+    <span class="close">&times;</span>
+    <iframe src="https://www.youtube.com/embed/xuw3Z91hQ94?autoplay=1&mute=1"></iframe>
+  </div>
+
+  <script>
+    // JavaScript code
+    document.addEventListener("DOMContentLoaded", function () {
+      var popup = document.getElementById("popup");
+      var close = document.getElementsByClassName("close")[0];
+
+      setTimeout(function () {
+        popup.style.display = "block";
+      }, 5000);
+
+      close.addEventListener("click", function () {
+        popup.style.display = "none";
+      });
+    });
+  </script>
+
+
+
+
+
+
+
+
+</!doctype>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>free.shourl.repl.co</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cloud-redwanul.web.app/2/redwanul.css">
+  <link rel="stylesheet" href="https://shourl.github.io/plyr/1.css">
+</head>
+<body>
+  <!-- partial:index.partial.html -->
+  <script src="https://cloud-redwanul.web.app/3/hls.js"></script>
+  <script src="https://cloud-redwanul.web.app/2/redwanul.js"></script>
+  <script src="https://shourl.github.io/plyr/1.js"></script>
+  <div class="container">
+    <video controls crossorigin playsinline>
+      <source type="application/x-mpegURL" src=""></source>
+    </video>
+    <div class="watermark">MaxiTV m3u8 Player</div>
+  </div>
+  <!-- partial -->
+
+  <script>
+    // Extract the m3u8 URL from the query parameter in the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const m3u8URL = urlParams.get('url');
+
+    // Set the m3u8 URL as the source of the video element
+    const videoSource = document.querySelector('video source');
+    videoSource.src = m3u8URL;
+
+    // Reload the video player after setting the source
+    const videoPlayer = document.querySelector('video');
+    videoPlayer.load();
+  </script>
+  <style>
+    .watermark {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px;
+    }
+  </style>
+</html>
