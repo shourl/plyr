@@ -1,23 +1,51 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.2.0/plyr.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.2.0/plyr.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.2.0/plyr.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.2.0/plyr.js"></script>
+</head>
+<body>
+
 <div class="plyr__video-embed" id="player">
   <iframe
-    src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+    src="https://www.youtube.com/embed/video_id?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
     allowfullscreen
     allowtransparency
     allow="autoplay"
   ></iframe>
 </div>
 <div class="player" id="player-1" data-plyr-provider="youtube" data-plyr-embed-id="Uu6mV27CY2k" data-plyr-config='{ "ratio": "1:1" }'></div>
+
 <script>
   const player = new Plyr('#player');
   player.on('ready', () => {
     player.play();
-  })
+  });
+
+  // Function to replace video ID in the iframe's src
+  function replaceVideoId(url) {
+    const regex = /(?:\?v=|\/embed\/)([a-zA-Z0-9_-]{11})/;
+    const match = url.match(regex);
+    if (match) {
+      const newVideoId = match[1];
+      const iframe = document.querySelector('#player iframe');
+      const newSrc = iframe.src.replace(/\/embed\/[a-zA-Z0-9_-]{11}/, `/embed/${newVideoId}`);
+      iframe.src = newSrc;
+    }
+  }
+
+  // Replace video ID when the URL has "?v="
+  const videoUrl = "https://www.youtube.com/watch?v=NEW_VIDEO_ID";
+  replaceVideoId(videoUrl);
 </script>
+
 <style>
-.plyr--full-ui input[type=range] {
-  color: red;    
-}
+  .plyr--full-ui input[type=range] {
+    color: red;    
+  }
 </style>
 
+</body>
+</html>
