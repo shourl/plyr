@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cloud-redwanul.web.app/2/redwanul.css">
-  <link rel="stylesheet" href="https://shourl.github.io/plyr/1.css">
-</head>
-<body>
-  <!-- partial:index.partial.html -->
-  <script src="https://cloud-redwanul.web.app/3/hls.js"></script>
-  <script src="https://cloud-redwanul.web.app/2/redwanul.js"></script>
-  <script src="https://shourl.github.io/plyr/1.js"></script>
-
-  <div class="container">
-    <div class="plyr__video-embed" id="player">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.2.0/plyr.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/plyr/3.2.0/plyr.js"></script>
+<div class="plyr__video-embed" id="player">
   <iframe
     src="https://www.youtube.com/embed/bTqVqk7FSmY?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
     allowfullscreen
@@ -19,3 +8,17 @@
     allow="autoplay"
   ></iframe>
 </div>
+<div class="player" id="player-1" data-plyr-provider="youtube" data-plyr-embed-id="Uu6mV27CY2k" data-plyr-config='{ "ratio": "1:1" }'></div>
+<script>
+  const player = new Plyr('#player');
+  player.on('ready', () => {
+    player.play();
+  })
+</script>
+<style>
+.plyr--full-ui input[type=range] {
+  color: red;    
+}
+</style>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M7lc1UVf-VE?color=#ff0" frameborder="0" allowfullscreen></iframe>
